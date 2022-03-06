@@ -2,9 +2,9 @@ function game() {
   const startBtn = document.querySelector(".start-btn");
   const shuffle = document.querySelector(".shuffle");
   const btnList = document.querySelector(".button-list");
+  let slideImg = document.querySelector(".slideImg");
 
   let timer = null;
-  let slideImg = document.querySelector(".slideImg");
   let prevName = "scissors";
   let imgArr = [
     {
@@ -27,10 +27,43 @@ function game() {
       slideImg.innerHTML = img.shape;
       slideImg.classList.replace(prevName, img.name);
       prevName = img.name;
-    }, 200);
+    }, 100);
   };
 
-  const compare = (me) => {};
+  const compare = (me) => {
+    clearInterval(timer);
+    timer = null;
+
+    const op = slideImg.classList[0];
+    console.log(op);
+
+    if (me === op) {
+      alert("비겼습니다");
+    }
+
+    if (me === "scissors") {
+      if (op === "rock") {
+        alert("졌습니다");
+      } else {
+        alert("이겼습니다");
+      }
+    }
+
+    if (me === "rock") {
+      if (op === "paper") {
+        alert("졌습니다");
+      } else {
+        alert("이겼습니다");
+      }
+    }
+    if (me === "paper") {
+      if (op === "scissors") {
+        alert("졌습니다");
+      } else {
+        alert("이겼습니다");
+      }
+    }
+  };
 
   startBtn.addEventListener("click", (e) => {
     start();
@@ -38,7 +71,6 @@ function game() {
 
   btnList.addEventListener("click", (e) => {
     compare(e.target.classList[0]);
-    clearInterval(timer);
   });
 }
 game();
