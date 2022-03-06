@@ -1,3 +1,15 @@
+.container {
+  width: 100px;
+  margin: 0 auto;
+}
+
 .start-btn {
-  color: red;
+  width: 200px;
+  height: 50px;
+  margin: 30px auto;
+  color: white;
+  background-color: #f7ae81;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
