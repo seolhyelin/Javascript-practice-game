@@ -1,4 +1,5 @@
 # Javascript-practice-game
+[배포주소](https://blissful-archimedes-8c0e0c.netlify.app)
 
 🎮 funny game with Vanilla JS
 
