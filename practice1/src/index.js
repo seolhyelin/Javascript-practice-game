@@ -39,6 +39,7 @@ function game() {
 
     if (me === op) {
       alert("비겼습니다");
+      return;
     }
 
     if (me === "scissors") {
